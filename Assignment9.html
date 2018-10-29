@@ -1,0 +1,104 @@
+<html>
+<head>
+	<title>Hello!</title>
+	<link rel="stylesheet" type="text/css" href="stylesheets/javastyle.css">
+	<link href="https://fonts.googleapis.com/css?family=Creepster|IM+Fell+English+SC" rel="stylesheet">
+
+	<script>
+		var questions = ["The person who built it sold it. The person who bought it never used it. The person who used it never saw it. What is it?", "How do you spell candy in 2 letters?", "A zombie and a mummy have a new house and it has all rooms except for one. What room is it?"];
+		var answersA = ["A coffin", "C and Y", "A living room"];
+		var answersB = ["A hammer", "JS", "A coding room"];
+		var answersC = ["A github account", "CD", "A kitchen"];
+
+		var totalScore = 0;
+	</script>
+
+</head>
+<body>
+	<h1>Spooky spooky Halloween Riddles!</h1>
+	<h2>See how spooky you REALLY are! Press any key to start!</h2>
+	<div>
+	<h3>Total Score: <span id="score"></span></h3>
+
+
+	<h4 id="question"></h4>
+	<div id=bc>
+		<button id="A"></button>
+		<button id="B"></button>
+		<button id="C"></button>
+	</div>
+
+	<h5 id="YEAH"></h5>
+
+	<script>
+		var questionCounter = 0;
+		document.addEventListener("keypress", function(event) {
+			setUpQuestions();
+		});
+
+		document.getElementById("A").addEventListener("click", function(event) {
+			document.getElementById("YEAH").innerHTML = "It's scary how good you are!";
+			totalScore += 1;
+			questionCounter += 1;
+			setUpQuestions();
+		});
+
+		document.getElementById("B").addEventListener("click", function(event) {
+			document.getElementById("YEAH").innerHTML = "Not quite!";
+			questionCounter += 1;
+			setUpQuestions();
+		});
+
+		document.getElementById("C").addEventListener("click", function(event) {
+			document.getElementById("YEAH").innerHTML = "Boo! It's scary to get questions wrong";
+			questionCounter += 1;
+			setUpQuestions();
+		});
+
+
+		function setUpQuestions() {
+			document.getElementById('question').innerHTML = questions[questionCounter];
+
+			document.getElementById('A').innerHTML = answersA[questionCounter];
+			document.getElementById('B').innerHTML = answersB[questionCounter];
+			document.getElementById('C').innerHTML = answersC[questionCounter];
+			document.getElementById("score").innerHTML = totalScore;
+		}
+		
+			var color=0;
+			var alpha=0.0; 
+			var h1=0;
+			document.addEventListener("keypress", function(event){
+				console.log(event);
+				var key=event.key;
+				
+				if(key=='r'){
+					color=0;
+				}else if (key=='o') {
+					color=90;
+				}else if (key=='y'){
+					color=80;
+				}else if(key=='g'){
+					color=70;
+				}
+				
+				
+				
+				var divs= document.getElementsByTagName("div");
+				
+				for(var i=0; i<divs.length;i++){
+					divs[i].style.background='hsl('+color+',100%,50%)';
+					color+=9;
+				}
+				
+			});
+
+	</script>
+</div>
+<p>Keep pressing keys to make Halloween rainbow :)</p>
+<div class="flexcontainer">
+	<img id="ghost" src="images/ghost.gif" width="200" height="200" alt="Rainbow ghost flying in space">
+</div>
+
+</body>
+</html>

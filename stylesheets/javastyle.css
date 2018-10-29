@@ -1,0 +1,64 @@
+
+h1 {
+	font-family: 'Creepster', cursive;
+	text-align: center;
+}
+
+h2,h3,h4,h5,p{
+	font-family: 'IM Fell English SC', serif;
+	text-align:center;
+}
+
+button {
+	background-color: orange;
+	font-family: 'IM Fell English SC', serif;
+	border-radius:10px;
+	display: inline-flex;
+	justify-content: center;
+	text-align: center;
+	margin: 0 auto;
+	float:middle;
+
+}
+
+div {
+	background: orange;
+	border-radius:10px;
+	padding: 5px;
+}
+
+#bc {
+	display:flex;
+	align-items: center;
+	justify-content: center;
+}
+
+@keyframes ghost {
+    0%   {left:200px; top:0px;}
+    25%  {left:400px; top:0px;}
+    50%  {left:600px; top:0px;}
+    75%  {left:800px; top:0px;}
+    100% {left:0px; top:0px;}
+}
+
+
+#ghost {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    animation-name: ghost;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+
+
+
+
+
+
+
+
+
+
+
